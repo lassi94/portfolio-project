@@ -1,2 +1,82 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
 body {
-  background: #444; }
+  cursor: crosshair;
+  font-family: Raleway; }
+
+.content {
+  width: 60%;
+  margin: 0 auto;
+  z-index: -1;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  transform: translate(0, -50%); }
+  .content h1 {
+    font-family: Raleway;
+    font-size: 54px;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.overlay-2 {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.overlay {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #000000; }
+  .overlay .myButton {
+    font-family: Raleway;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .overlay .myButton:hover {
+      color: #ffffff;
+      cursor: crosshair; }
+    .overlay .myButton:before {
+      content: "";
+      position: absolute;
+      background: #FFE77C;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 100%;
+      z-index: -1;
+      transition: top 0.8s ease-out; }
+    .overlay .myButton:hover::before {
+      top: 0; }
+  .overlay button {
+    display: block;
+    padding: 24px 48px;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: #FFE77C;
+    border: 2px solid #FFE77C;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: crosshair;
+    transition: 0.8s ease-out; }
+
+.screen {
+  color: #323232;
+  font-family: Raleway;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
