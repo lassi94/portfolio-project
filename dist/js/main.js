@@ -1,5 +1,3 @@
-//import { TweenMax, TimelineLite, Power2, Elastic, CSSPlugin, Expo } from "gsap/TweenMax";
-
 
 var fadeAnim = document.getElementById("btn");
 
