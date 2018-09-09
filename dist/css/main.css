@@ -13,7 +13,7 @@ body {
   margin: 0 auto;
   z-index: -1;
   position: absolute;
-  top: 90%;
+  top: 60%;
   left: 10%;
   transform: translate(0, -50%); }
   .content h1 {
@@ -27,14 +27,14 @@ body {
   z-index: 0;
   position: absolute;
   width: 100%;
-  height: 100%; }
+  height: 100vh; }
 
 .overlay {
   z-index: 1;
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url(/dist/assets/overlayBg.png) no-repeat 20%; }
+  background: url(/dist/assets/backgroundPic.png) no-repeat 50% 50%; }
   .overlay .myButton {
     font-family: Raleway;
     position: absolute;
@@ -115,6 +115,38 @@ body {
       font-weight: 700;
       text-decoration: none;
       letter-spacing: 5px; }
+  .overlay .right-corner {
+    position: absolute;
+    float: right;
+    top: 9%;
+    left: 96%;
+    transform: translate(-50%, -50%); }
+    .overlay .right-corner img {
+      transform: rotate(90deg); }
+  .overlay .left-corner {
+    position: absolute;
+    float: left;
+    top: 9%;
+    left: 4%;
+    transform: translate(-50%, -50%); }
+    .overlay .left-corner img {
+      transform: rotate(0deg); }
+  .overlay .bottom-left-corner {
+    position: absolute;
+    float: left;
+    top: 91%;
+    left: 4%;
+    transform: translate(-50%, -50%); }
+    .overlay .bottom-left-corner img {
+      transform: rotate(270deg); }
+  .overlay .bottom-right-corner {
+    position: absolute;
+    float: right;
+    top: 91%;
+    left: 96%;
+    transform: translate(-50%, -50%); }
+    .overlay .bottom-right-corner img {
+      transform: rotate(180deg); }
 
 .screen {
   color: #323232;
