@@ -6,22 +6,52 @@ html, body {
 
 body {
   cursor: crosshair;
-  font-family: Raleway; }
+  font-family: Raleway;
+  background: url(/dist/assets/backgroundPic.png) no-repeat 50% 50%;
+  background-size: cover; }
 
 .content {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   z-index: -1;
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 10%;
   transform: translate(0, -50%); }
-  .content h1 {
-    font-family: Raleway;
-    font-size: 54px;
-    color: #000000;
-    font-weight: 700;
-    text-transform: uppercase; }
+  .content .information-overlay {
+    position: absolute;
+    background: #f8f8f8;
+    box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.08);
+    width: 45%;
+    height: 300px;
+    z-index: -1;
+    border-radius: 3px;
+    top: 100%;
+    left: 0%; }
+    .content .information-overlay h1 {
+      font-family: Montserrat Alternates;
+      font-size: 54px;
+      color: #000000;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 20px; }
+    .content .information-overlay .more-information {
+      font-family: Raleway;
+      font-size: 20px;
+      color: #000000;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-left: 20px;
+      padding-bottom: 20px; }
+  .content .background-overlay {
+    position: relative;
+    float: left;
+    z-index: -100;
+    top: 50%;
+    left: 50%; }
+    .content .background-overlay img {
+      width: 70%;
+      height: 100vh; }
 
 .overlay-2 {
   z-index: 0;
@@ -34,7 +64,10 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url(/dist/assets/background-pic.png) no-repeat 50% 50%; }
+  background: url(/dist/assets/background-pic.png) no-repeat 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; }
   .overlay .myButton {
     font-family: Raleway;
     position: absolute;
@@ -60,11 +93,11 @@ body {
     display: block;
     padding: 24px 48px;
     font-family: Raleway;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 800;
+    font-size: 16px;
     letter-spacing: 6px;
     color: #FFE77C;
-    border: 2px solid #FFE77C;
+    border: 3px solid #FFE77C;
     text-transform: uppercase;
     outline: none;
     overflow: hidden;
@@ -80,7 +113,7 @@ body {
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
-    width: 100%; }
+    width: 80%; }
     .overlay .headings .head {
       text-align: center;
       font-size: 100px;
@@ -181,25 +214,77 @@ body {
     align-items: center;
     transform: rotate(270deg); }
     .overlay .buttons .divider {
-      flex-grow: 3;
+      flex-grow: 1;
       border: 1px solid #000000;
       margin: 14px;
       width: 60px; }
     .overlay .buttons .github-btn {
+      display: block;
       font-family: Raleway;
       font-weight: 700;
       font-size: 14px;
-      letter-spacing: 4px; }
+      letter-spacing: 4px;
+      text-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.08); }
+      .overlay .buttons .github-btn:hover {
+        border-bottom: 2px solid #FFE77C;
+        border-width: 20%;
+        animation-name: fill-bottom;
+        animation-delay: 0.5s;
+        animation-duration: 2s; }
     .overlay .buttons .linkedin-btn {
+      display: block;
       font-family: Raleway;
       font-weight: 700;
       font-size: 14px;
-      letter-spacing: 4px; }
-
-.screen {
-  color: #323232;
-  font-family: Raleway;
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+      letter-spacing: 4px;
+      text-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.08);
+      /*&::after{
+                content: "";
+                transform: rotate(90deg);
+                background: $primary-color;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 80px;
+                width:2px;
+                transition: ease-out 0.5s;
+              
+            }*/ }
+      .overlay .buttons .linkedin-btn:hover {
+        border-bottom: 2px solid #FFE77C;
+        border-width: 20%;
+        animation-name: fill-bottom;
+        animation-delay: 0.5s;
+        animation-duration: 2s;
+        /*@keyframes fill-bottom {
+                    from{
+                        width: 0%;
+                    }
+                    to{
+                        width: 50%;
+                    }
+                    
+                }*/ }
+  .overlay .stranger-tag {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 80%;
+    left: 70%;
+    align-items: center;
+    transform: rotate(270deg); }
+    .overlay .stranger-tag .text {
+      font-family: Raleway;
+      font-weight: 700;
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-decoration: none;
+      text-transform: uppercase; }
+    .overlay .stranger-tag #line {
+      display: block;
+      margin: 0;
+      padding: 0;
+      height: 70px;
+      border-top: 2px solid #000000;
+      width: 60%; }

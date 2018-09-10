@@ -1,11 +1,25 @@
 
+var github = document.getElementById("github");
+var linkedin = document.getElementById("linkedin");
 var fadeAnim = document.getElementById("btn");
 
-fadeAnim.addEventListener('click', fade)
+github.addEventListener('click', redirect);
+linkedin.addEventListener('click', redirect);
+fadeAnim.addEventListener('click', fade);
 
 function fade(){
 
     TweenMax.to(".myButton", 1, {
+        y:-100,
+        opacity:0
+    });
+    
+    TweenMax.to(".head", 1, {
+        y:-100,
+        opacity:0
+    });
+    
+    TweenMax.to(".subheading", 1, {
         y:-100,
         opacity:0
     });
@@ -38,4 +52,17 @@ function fade(){
         delay: 3.2,
         ease: Power2.easeInOut
     });
+}
+
+function redirect(path){
+
+    var compare = path.localeCompare("github");
+    console.log(compare);
+
+    if(compare == 0){
+        window.location.replace('https://github.com/lassi94');
+
+    }else{
+        window.location.replace('https://www.linkedin.com/in/lassi-korhonen-b50510127/');
+    }
 }
