@@ -48,7 +48,7 @@ function fade(){
 
     TweenMax.to(".content", 2, {
         opacity: 1,
-        y: -300,
+        y: 0,
         delay: 3.2,
         ease: Power2.easeInOut
     });
