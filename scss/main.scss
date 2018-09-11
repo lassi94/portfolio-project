@@ -1,4 +1,9 @@
+@import 'projects';
+@import 'about';
+
 $primary-color: #FFE77C;
+$secondary-color: #ffffff;
+$shadow: (0px 6px 22px 0px rgba(0,0,0,0.08));
 
 html, body{
     margin: 0;
@@ -12,12 +17,15 @@ body {
     font-family: Raleway;
 }
 
+.container{
+    overflow: hidden;
+}
+
 .content{
     display: block;
     width: 100%;
     height: 100vh;
     margin: 0 0;
-    z-index: -1;
     position: absolute;
     padding: 0;
     background: url(/dist/assets/back-pic.png) no-repeat 50% 50%;
@@ -36,12 +44,43 @@ body {
             display: block;
             font-family: Montserrat Alternates;
             font-size: 80px;
-            color: #ffffff;
+            color: $secondary-color;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 20px;
-            line-height: 65px;
+            line-height: 80px;
             position: relative;
+            text-shadow: $shadow; 
+
+            .word{
+                .char{
+                    &:hover{  
+                        animation: bounce 1s forwards;
+                        color: #FFE77C;
+                        
+                        @keyframes bounce {
+                            0%{
+                                transform: translateY(0px);
+                            }
+                            20%{
+                                transform: translateY(10px);
+
+                            }
+                            50%{
+                                transform: translateY(-10px);
+                            }
+                            75%{
+                                transform: translateY(5px)
+                            }
+                            100%{
+                                transform: translateY(0px);
+                            }
+                            
+                        }
+                    }
+                }
+                
+            }
         }
         .more-info{
             display: flex;
@@ -99,6 +138,7 @@ body {
 
     .buttons{
         display: flex;
+        z-index: 2;
         position: fixed;
         top: 50%;
         left: -2%;
@@ -119,7 +159,7 @@ body {
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 4px;
-            text-shadow: (0px 6px 22px 0px rgba(0,0,0,0.08)); 
+            text-shadow: $shadow;
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;
@@ -135,7 +175,7 @@ body {
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 4px;
-            text-shadow: (0px 6px 22px 0px rgba(0,0,0,0.08));
+            text-shadow: $shadow;
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;
@@ -166,6 +206,105 @@ body {
             }*/
         }
     }
+    nav{
+        display: flex;
+        position: fixed;
+        width: 95%;
+        margin: 0px auto;
+        line-height: 60px;
+        align-items: center;
+        z-index: 2;
+        margin-left: 30px;
+
+        .left-corner{
+            display: flex;
+            float: left;
+            margin-top: 30px;
+        }
+
+        .right-corner{
+            float: right;
+            transform: rotate(90deg);
+            margin-left: auto;
+            margin-top: 30px;
+        }
+
+        .desktop-nav{
+            a{
+                text-align: left;
+                color: #ffffff;
+                text-shadow: $shadow;
+                text-decoration: none;
+                margin-left: 40px;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 4px;
+                background: transparent;
+                width: 100%;
+                &:hover{
+                    border-bottom: 1px solid $primary-color;
+                    cursor: crosshair;
+                }
+            }
+        }
+
+        .mobile-nav{
+            display: none;
+        }
+    }
+
+    .scroll-indicators{
+        top: 45%;
+        left: 97.5%;
+        position: fixed;
+        color: #ffffff;
+        transform: translate(-50%, -50%);
+        li{
+            margin: 10px;
+            font-size: 35px;
+        }
+    }
+
+    .browse-button{
+        display: block;
+        position: absolute;
+        top: 77%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        .browse{    
+            border: 2px dashed $primary-color;
+            border-radius: 10px;
+            height: 70px;
+            width: 200px;
+            background: transparent;
+            font-size: 30px;
+            text-align: center;
+            color: #ffffff;
+            font-family: Montserrat Alternates;
+            font-weight: 500;
+            letter-spacing: 4px;
+            //animation: rotateEllipse 15s ease-in-out infinite;
+            transform: rotate(0deg);
+            text-shadow: $shadow;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            &:hover{
+                background: #FFE77C;
+                border: 2px solid $primary-color;
+                cursor: crosshair;
+            }
+
+            @keyframes rotateEllipse {
+                from{
+                    transform: rotate(-45deg);
+                }
+                to{
+                    transform: rotate(-405deg);
+                }
+            }
+        }
+    }
 }
     
 
@@ -174,6 +313,8 @@ body {
     position: absolute;
     width: 100%;
     height: 100vh;
+    background: #FFE77C;
+    overflow: hidden;
 }
 
 .overlay{
@@ -189,7 +330,7 @@ body {
     .myButton{
        font-family: Raleway;
        position:absolute;
-       top:55%;
+       top:50%;
        left: 50%;
        transform: translate(-50%, -50%);
 
@@ -271,6 +412,7 @@ body {
             margin: 0;
             text-align: center;
             letter-spacing: 5px;
+            padding: 5px;
         }
         .subheading.words{
             .char{
@@ -297,10 +439,11 @@ body {
     
     .subheading2{
         position: absolute;
-        top: 67%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        padding: 5px;
         .subheading{
             font-family: Raleway;
             font-weight: 700;
@@ -397,7 +540,7 @@ body {
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 4px;
-            text-shadow: (0px 6px 22px 0px rgba(0,0,0,0.08)); 
+            text-shadow: $shadow;
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;
@@ -412,7 +555,7 @@ body {
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 4px;
-            text-shadow: (0px 6px 22px 0px rgba(0,0,0,0.08));
+            text-shadow: $shadow;
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;

@@ -29,15 +29,16 @@ function fade(){
     });
 
     TweenMax.to(".overlay", 2, {
-        delay: 2,
-        top: "-100%",
+        delay: 2.6,
+        top:"-110%",
         ease: Expo.easeInOut
     });
 
-    TweenMax.to("overlay-2", 2, {
+    TweenMax.to(".overlay-2", 2, {
         delay: 3,
-        top:"-100%",
-        ease: Expo.easeInOut
+        top:"-200%",
+        ease: Expo.easeInOut,
+        opacity:0
     });
 
     TweenMax.from(".content", 2, {
@@ -50,6 +51,21 @@ function fade(){
         opacity: 1,
         y: 0,
         delay: 3.2,
+        zIndex: 1,
+        ease: Power2.easeInOut
+    });
+
+    TweenMax.from(".information", 2, {
+        delay: 3.2,
+        y: 500,
+        opacity: 0,
+        ease: Power2.easeInOut
+    });
+
+    TweenMax.to(".information", 2,{
+        opacity: 1,
+        y: -130,
+        delay:3.2,
         ease: Power2.easeInOut
     });
 }

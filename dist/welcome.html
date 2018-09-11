@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/dist/css/main.css">
+</head>
+<body>
+        <div class="overlay">
+                <div class="headings">
+                    <h1 class="head" data-splitting>WELCOME</h1>
+                    <p class="subheading" data-splitting>This is the portfolio page of full stack developer Lassi Korhonen</p>
+                </div>
+                <div class="intro">
+                    <button class="myButton" id="btn" onclick="fade()" src="/index.html">EXPLORE FURTHER</button>
+                </div>
+                <div class="subheading2">
+                    <p class="subheading" data-splitting>(Press the button to see the magic)</p>
+                </div>
+                <div class="right-corner">
+                    <img src="/dist/assets/corner.png" alt="">
+                </div>
+                
+                <div class="left-corner">
+                    <img src="/dist/assets/corner.png" alt="">
+                </div>
+                
+                <div class="bottom-left-corner">
+                    <img src="/dist/assets/corner.png" alt="">
+                </div>
+                
+                <div class="bottom-right-corner">
+                    <img src="/dist/assets/corner.png" alt="">
+                </div>
+    
+                <div class="buttons">
+                    <span class="linkedin-btn" id="linkedin" onclick="redirect('linkedin')" href="https://www.linkedin.com/in/lassi-korhonen-b50510127/">LinkedIn</span>
+                    <span class="divider"></span>
+                    <span class="github-btn" id ="github" onclick="redirect('github')" href="https://github.com/lassi94">Github</span>
+                </div>
+    
+                <div class="stranger-tag">
+                    <p class="text">
+                        Hello stranger
+                    </p>
+                    <span id="line"></span>
+                </div>
+            </div>
+
+        <script src="/dist/js/main.js"></script>
+        <script> Splitting(); </script>
+
+</body>
+</html>

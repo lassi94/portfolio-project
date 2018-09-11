@@ -1,0 +1,18 @@
+
+.flex-two{
+    .flex-text{
+        color: #000000;
+        top: 105%;
+        left: 55%;
+        position: absolute;
+        width: 40%;
+        h2{
+            text-transform: uppercase;
+            font-family: Raleway;
+            letter-spacing: 4px;
+        }
+        p{
+            line-height: 30px;
+        }
+    }
+}
