@@ -1,13 +1,79 @@
 
 var github = document.getElementById("github");
 var linkedin = document.getElementById("linkedin");
-var fadeAnim = document.getElementById("btn");
 
 github.addEventListener('click', redirect);
 linkedin.addEventListener('click', redirect);
-fadeAnim.addEventListener('click', fade);
+//fadeAnim.addEventListener('click', fade);
+
+$(function (){
+    $(document).scroll(function(){
+        var $buttons = $('.buttons');
+        var $content = $(".content");
+        var $nav = $(".navbar");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $buttons.toggleClass('buttons-scrolled', $(this).scrollTop() > ($content.height() - $buttons.width()*2));
+    });
+});
+
+/*
+var wh = window.innerHeight,
+    $information = $('.information'),
+    $scroll = $('.scroll');
+
+var ctrl = new ScrollMagic.Controller({
+    globalSceneOptions: {
+        triggerHook: 'onLeave'
+    }
+});
+
+var scene = new ScrollMagic.Scene({
+    triggerElement: this,
+    duration: 400
+})
+.setPin('.information')
+.addTo(ctrl);
+
+$("section").each(function(){
+    new ScrollMagic.Scene({
+        triggerElement: this,
+        duration: '20%'
+    })
+    .setPin(this)
+    .addIndicators()
+    .addTo(ctrl);
+});
+
+var contentFade = new TimelineMax();
+contentFade.from($information, 1, {
+    opacity: 1
+})
+.to($information, 1, {
+    opacity: 0, 
+    yPercent:-50, 
+    scale: 0.98
+}, '0');
+
+new ScrollMagic.Scene({
+    duration: '20%'
+})
+.setTween(contentFade)
+.triggerElement($('body')[0])
+.addTo(ctrl);
+*/
+/*
+var animation = bodymovin.loadAnimation({
+    container: document.getElementById('html'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '/dist/assets/data.json'
+});
+*/
 
 function fade(){
+
+    //window.location.replace('/dist/main.html');
 
     TweenMax.to(".myButton", 1, {
         y:-100,
@@ -82,3 +148,32 @@ function redirect(path){
         window.location.replace('https://www.linkedin.com/in/lassi-korhonen-b50510127/');
     }
 }
+
+/*
+$('[href*="#"]')
+.not('[href="#"]')
+.not('[href="#0"]')
+.click(function(event){
+    if(location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname){
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+        if(target.length){
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 100, function(){
+                var $target = $(target);
+                $target.focus();
+                if($target.is(":focus")){
+                    return false;
+                }else{
+                    $target.attr('tabindex', '-1');
+                    $target.focus();
+                };
+            });
+        }
+    }
+});
+
+*/

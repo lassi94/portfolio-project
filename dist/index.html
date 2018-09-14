@@ -13,7 +13,7 @@
     <title>Portfolio</title>
 </head>
 <body>
-   <div class="container">
+   <section class="container">
 
         <div class="overlay">
             <div class="headings">
@@ -109,6 +109,8 @@
                 <li class="four"></li>
             </ul>
         </div>
+         </section>
+        <section></section>
         <div class="flex-two">
                 <div class="flex-item">
           
@@ -126,8 +128,17 @@
         <div class="content">
             <h1>Landing page</h1>
         </div>-->  
-   </div>
+    </section>
    <script src="/dist/js/main.js"></script>
    <script> Splitting(); </script>
+   <script>
+       var windowWidth = $(window).width();
+       $('.container').mousemove(function(event){
+           var moveX = (($(window).width()/2) - event.pageX) * 0.1;
+           var moveY = (($(window).height()/2) - event.pageY) * 0.1;
+            $('.content').css('margin-left', moveX+'px');
+            $('.content').css('margin-top', moveY+'px');
+       });
+   </script>
 </body>
 </html>
