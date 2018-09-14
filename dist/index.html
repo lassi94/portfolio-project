@@ -59,7 +59,7 @@
         <div class="overlay-2">
 
         </div>
-
+        <section>
         <div class="content">
             <nav class="navbar">
                 <a href="#" class="left-corner"><img src="/dist/assets/corner.png" alt=""></a>
@@ -109,6 +109,7 @@
                 <li class="four"></li>
             </ul>
         </div>
+    </section>
          </section>
         <section></section>
         <div class="flex-two">
@@ -139,6 +140,58 @@
             $('.content').css('margin-left', moveX+'px');
             $('.content').css('margin-top', moveY+'px');
        });
+
+           var wh = window.innerHeight,
+    $information = $('.information'),
+    $scroll = $('.scroll'),
+    $buttons = $('.buttons'),
+    $content = $('.content');
+
+    var ctrl = new ScrollMagic.Controller({
+        globalSceneOptions:{
+            triggerHook: 'onLeave'
+        }
+    });
+
+    $("section").each(function() {
+   
+   new ScrollMagic.Scene({
+       triggerElement: this,
+       duration: '70%'
+    })
+    .setPin(this)
+    .addIndicators()
+    .addTo(ctrl);
+    });
+    
+    var intro = new TimelineMax();
+    intro.to(
+        $content, 0.5, {opacity: 0.5}
+    )
+    .to(
+        $information, 0.5, {opacity:0, yPercent: -20, scale: 0.98}
+    )
+    .to(
+        $scroll, 0.5, {opacity:0, yPercent: -20, scale: 0.98}
+    )
+    .to(
+        $buttons, 0.5, {opacity:0, yPercent: -20, scale: 0.98}, '0'
+    );
+
+
+    new ScrollMagic.Scene({
+        duration: '90%'
+    })
+    .setTween(intro)
+    .triggerElement($('body')[0])
+    .addTo(ctrl);
+
+    $('a[href*="#"]').on('click', function(e){
+		$('html,body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 100
+		},500);
+		e.preventDefault();
+	});
    </script>
 </body>
 </html>

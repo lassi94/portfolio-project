@@ -8,68 +8,10 @@ linkedin.addEventListener('click', redirect);
 
 $(function (){
     $(document).scroll(function(){
-        var $buttons = $('.buttons');
-        var $content = $(".content");
         var $nav = $(".navbar");
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        $buttons.toggleClass('buttons-scrolled', $(this).scrollTop() > ($content.height() - $buttons.width()*2));
     });
 });
-
-/*
-var wh = window.innerHeight,
-    $information = $('.information'),
-    $scroll = $('.scroll');
-
-var ctrl = new ScrollMagic.Controller({
-    globalSceneOptions: {
-        triggerHook: 'onLeave'
-    }
-});
-
-var scene = new ScrollMagic.Scene({
-    triggerElement: this,
-    duration: 400
-})
-.setPin('.information')
-.addTo(ctrl);
-
-$("section").each(function(){
-    new ScrollMagic.Scene({
-        triggerElement: this,
-        duration: '20%'
-    })
-    .setPin(this)
-    .addIndicators()
-    .addTo(ctrl);
-});
-
-var contentFade = new TimelineMax();
-contentFade.from($information, 1, {
-    opacity: 1
-})
-.to($information, 1, {
-    opacity: 0, 
-    yPercent:-50, 
-    scale: 0.98
-}, '0');
-
-new ScrollMagic.Scene({
-    duration: '20%'
-})
-.setTween(contentFade)
-.triggerElement($('body')[0])
-.addTo(ctrl);
-*/
-/*
-var animation = bodymovin.loadAnimation({
-    container: document.getElementById('html'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: '/dist/assets/data.json'
-});
-*/
 
 function fade(){
 

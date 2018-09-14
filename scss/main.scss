@@ -15,6 +15,7 @@ html, body{
 body {
     cursor: crosshair;
     font-family: Raleway;
+    overflow-x: hidden;
 }
 
 .container{
@@ -69,12 +70,10 @@ nav{
             font-weight: 700;
             letter-spacing: 4px;
             width: 100%;
+            outline: 0;
             &:hover{
                 border-bottom: 1px solid $primary-color;
                 cursor: crosshair;
-            }
-            &:active{
-                border: none;
             }
         }
     }
@@ -94,6 +93,7 @@ nav{
     background: url(/dist/assets/back-pic.png) no-repeat 50% 50%;
     background-size: cover;
     background-position: center;
+
     .information{
         display: inline-block;
         position: absolute;
@@ -200,10 +200,15 @@ nav{
         }
     }
 
+    .buttons-scrolled{
+        color: #000000;
+        background: #000000;
+        transition: color 300ms linear;
+    }
     .buttons{
         display: flex;
-        z-index: 2;
-        position: fixed;
+        z-index: 1;
+        position: absolute;
         top: 50%;
         left: -2%;
         margin: -40px;
@@ -224,6 +229,10 @@ nav{
             font-size: 14px;
             letter-spacing: 4px;
             text-shadow: $shadow;
+            border: none;
+            outline: 0;
+            text-decoration: none;
+
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;
@@ -240,6 +249,10 @@ nav{
             font-size: 14px;
             letter-spacing: 4px;
             text-shadow: $shadow;
+            border: none;
+            outline: 0;
+            text-decoration: none;
+
             &:hover{
                 border-bottom: 2px solid $primary-color;
                 border-width: 20%;
@@ -537,6 +550,7 @@ nav{
 
     }
 
+    
     .buttons{
         display: flex;
         position: absolute;
@@ -655,6 +669,30 @@ nav{
     }
 }
 
+.buttons-scrolled{
+    color: #000000;
+    transition: color 300ms linear;
+}
+
+
+.page-counter{
+    display: block;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%,-50%);
+    p{
+        color: #000000;
+        font-family:Raleway;
+        font-size: 50px;
+        transition: 500ms ease-in;
+        font-weight: 500;
+    }
+    .current-page{
+
+    }
+}
 
 
 

@@ -4,7 +4,7 @@
   .about .flex-two .flex-left {
     display: block;
     width: 300px;
-    height: 300px; }
+    height: 40px; }
     .about .flex-two .flex-left #html {
       width: 250px;
       height: 250px; }
@@ -17,7 +17,8 @@ html, body {
 
 body {
   cursor: crosshair;
-  font-family: Raleway; }
+  font-family: Raleway;
+  overflow-x: hidden; }
 
 .container {
   overflow: hidden;
@@ -59,12 +60,11 @@ nav {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px;
-    width: 100%; }
+    width: 100%;
+    outline: 0; }
     nav .desktop-nav a:hover {
       border-bottom: 1px solid #FFE77C;
       cursor: crosshair; }
-    nav .desktop-nav a:active {
-      border: none; }
   nav .mobile-nav {
     display: none; }
 
@@ -155,10 +155,14 @@ nav {
       padding: 0;
       border-top: 2px solid #ffffff;
       width: 60%; }
+  .content .buttons-scrolled {
+    color: #000000;
+    background: #000000;
+    transition: color 300ms linear; }
   .content .buttons {
     display: flex;
-    z-index: 2;
-    position: fixed;
+    z-index: 1;
+    position: absolute;
     top: 50%;
     left: -2%;
     margin: -40px;
@@ -177,7 +181,10 @@ nav {
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 4px;
-      text-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.08); }
+      text-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.08);
+      border: none;
+      outline: 0;
+      text-decoration: none; }
       .content .buttons .github-btn:hover {
         border-bottom: 2px solid #FFE77C;
         border-width: 20%;
@@ -192,6 +199,9 @@ nav {
       font-size: 14px;
       letter-spacing: 4px;
       text-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.08);
+      border: none;
+      outline: 0;
+      text-decoration: none;
       /*&::after{
                 content: "";
                 transform: rotate(90deg);
@@ -513,3 +523,21 @@ nav {
   .section-container .contact {
     height: 80vh;
     width: 100%; }
+
+.buttons-scrolled {
+  color: #000000;
+  transition: color 300ms linear; }
+
+.page-counter {
+  display: block;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%); }
+  .page-counter p {
+    color: #000000;
+    font-family: Raleway;
+    font-size: 50px;
+    transition: 500ms ease-in;
+    font-weight: 500; }

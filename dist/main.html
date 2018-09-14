@@ -9,30 +9,40 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
+   
 
     <title>Portfolio</title>
 </head>
 <body>
 
     <nav class="navbar">
-        <span class="left-corner"><img src="/dist/assets/corner.png" alt=""></span>
+        <!--<span class="left-corner"><img src="/dist/assets/corner.png" alt=""></span>-->
         <div class="desktop-nav">
             <a class="scrollable" href="#home">Home</a>
             <a class="scrollable" href="#about">About</a>
             <a class="scrollable" href="#projects">Projects</a>
             <a class="scrollable" href="#contact">Contact</a>
         </div>
-        <span class="right-corner"><img src="/dist/assets/corner.png" alt=""></span>
+        <!--<span class="right-corner"><img src="/dist/assets/corner.png" alt=""></span>-->
         <div class="mobile-nav">
             <a href="#">&#9776;</a>
         </div>
     </nav>
+
+    <div class="page-counter">
+            <p class="current-page"></p>
+            <p>/</p>
+            <p class="page-count"></p>
+    </div>
 
    <section class="container" id="home">
 
@@ -53,7 +63,7 @@
             <!--<div class="browse-button">
                 <button class="browse" id="btn" href="google.com">Browse</button>
             </div>-->    
-            <div class="scroll">
+            <div class="scroll" id="scrolling-indicator">
                 <p class="text">
                     Scroll
                 </p>
@@ -62,10 +72,11 @@
                 </span>
              </div>
              <div class="buttons">
-                <span class="linkedin-btn" id="linkedin" onclick="redirect('linkedin')" href="https://www.linkedin.com/in/lassi-korhonen-b50510127/">LinkedIn</span>
+                <a class="linkedin-btn" id="linkedin" href="https://www.linkedin.com/in/lassi-korhonen-b50510127/">LinkedIn</a>
                 <span class="divider"></span>
-                <span class="github-btn" id ="github" onclick="redirect('github')" href="https://github.com/lassi94">Github</span>
+                <a class="github-btn" id ="github" href="https://github.com/lassi94">Github</a>
             </div>
+
             <!--<ul class="scroll-indicators">
                 <li class="one"></li>
                 <li class="two"></li>
@@ -83,6 +94,9 @@
    <div class="section-container">
         <section class="about" id="about">
                 <div class="flex-two">
+                    <div class="heading">
+                        <h1>About</h1>
+                    </div>
                     <div class="flex-left">
                         <div class="slider" id="html">
 
@@ -134,6 +148,66 @@
    <script> Splitting(); </script>
    <script>
 
+    $('.page-count').text($('section').size());
+
+    $('section').each(function(i,el){
+        var waypoint = new Waypoint({
+            element: el,
+            offset: '50%',
+            handler: function(direction){
+                if(direction=='down'){
+                    $('.current-page').text(i+1);
+                }else{
+                    $('.current-page').text(i);
+                }
+            }
+        })
+    });
+
+    var wh = window.innerHeight,
+    $information = $('.information'),
+    $scroll = $('#scrolling-indicator'),
+    $buttons = $('.buttons'),
+    $content = $('.content');
+
+    var ctrl = new ScrollMagic.Controller({
+        globalSceneOptions:{
+            triggerHook: 'onLeave'
+        }
+    });
+
+    $("section").each(function() {
+   
+   new ScrollMagic.Scene({
+       triggerElement: this,
+       duration: '10%'
+    })
+    .setPin(this)
+    .addIndicators()
+    .addTo(ctrl);
+    });
+    
+    var intro = new TimelineMax();
+    intro.to(
+        $content, 0.5, {opacity: 0}
+    )
+    .to(
+        $information, 0.5, {opacity:0, yPercent: -20, scale: 0.98}
+    )
+    .to(
+        $scroll, 0.5, {opacity:0, yPercent: -20, scale: 0.98}
+    )
+    .to(
+        $buttons, 0.5, {opacity:0, yPercent: -20, scale: 0.98}, '0'
+    );
+
+
+    new ScrollMagic.Scene({
+        duration: '90%'
+    })
+    .setTween(intro)
+    .triggerElement($('body')[0])
+    .addTo(ctrl);
 
     $('a[href*="#"]').on('click', function(e){
 		$('html,body').animate({
