@@ -57,8 +57,26 @@
       border: 2px solid #FFE77C;
       transform: rotate(90deg);
       height: 70px; }
-  .about .divide-up {
-    display: flex; }
+  .about .divider-up {
+    display: flex;
+    border: 1px solid #FFE77C;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    flex-grow: 1;
+    width: 800px; }
+  .about .divider-down {
+    display: flex;
+    border: 1px solid #FFE77C;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    flex-grow: 1;
+    width: 800px; }
 
 html, body {
   margin: 0;
