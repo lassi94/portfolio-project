@@ -94,6 +94,7 @@
    <div class="section-container">
         <section class="about" id="about">
                 <div class="flex-two">
+                    <div class="divider-up"></div>
                     <div class="heading">
                         <h1>About</h1>
                     </div>
@@ -112,13 +113,23 @@
                         </div>
                     </div>
                     <div class="flex-text">
-                    <h2 class="about-heading">
-                        I build software
-                    </h2>
-                    <p class="subheading-about">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                    </p>
+                        <h2 class="about-heading">
+                            I build software
+                        </h2>
+                        <p class="subheading-about">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                        </p>
                     </div>
+                    <div class="personality">
+                        <div class="trait">Skilled</div>
+                        <span class="divider"></span>
+                        <div class="trait">Innovative</div>
+                        <span class="divider"></span>
+                        <div class="trait">Ambitious</div>
+                        <span class="divider"></span>
+                        <div class="trait">Relentless</div>
+                    </div>
+                    <div class="divider-down"></div>
                 </div>
             </section>
 
@@ -183,7 +194,6 @@
        duration: '10%'
     })
     .setPin(this)
-    .addIndicators()
     .addTo(ctrl);
     });
     
@@ -216,6 +226,11 @@
 		e.preventDefault();
 	});
 
+    var scene = new ScrollMagic.Scene({
+        triggerElement: '#about'
+    })
+    .setClassToggle('#about', 'fade-in')
+    .addTo(ctrl);
 
    $(document).ready(function() {
 	try {
