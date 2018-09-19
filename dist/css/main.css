@@ -81,7 +81,7 @@
 .contact-container {
   display: block;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center; }
@@ -116,7 +116,14 @@
       border: 2px solid #FFE77C;
       width: 60px; }
     .contact-container .contact-information a {
-      padding: 20px; }
+      padding: 20px;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      color: #000000;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 4px; }
 
 html, body {
   margin: 0;
@@ -650,3 +657,15 @@ nav {
     font-size: 50px;
     transition: 500ms ease-in;
     font-weight: 500; }
+
+footer {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 2px solid #FFE77C; }
+  footer .container .left-content {
+    padding: 50px;
+    float: left; }
+  footer .container .right-content {
+    float: right;
+    padding: 50px; }
