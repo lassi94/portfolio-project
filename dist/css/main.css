@@ -28,7 +28,7 @@
     font-family: Raleway;
     font-weight: 800;
     text-transform: uppercase;
-    top: 40%;
+    top: 32%;
     left: -5%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -77,6 +77,46 @@
     align-items: center;
     flex-grow: 1;
     width: 800px; }
+
+.contact-container {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+  .contact-container .contact-heading {
+    font-family: Raleway;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin: 40px;
+    padding: 0; }
+  .contact-container .more-information {
+    font-family: Raleway;
+    line-height: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0;
+    padding: 0; }
+  .contact-container .contact-information {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 50px auto; }
+    .contact-container .contact-information .divider {
+      border: 2px solid #FFE77C;
+      width: 60px; }
+    .contact-container .contact-information .ball-divider {
+      display: block;
+      border: 2px solid #FFE77C;
+      width: 60px; }
+    .contact-container .contact-information a {
+      padding: 20px; }
 
 html, body {
   margin: 0;
