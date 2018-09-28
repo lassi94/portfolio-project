@@ -126,12 +126,28 @@
 
             <section class="projects" id="projects">
                 <div class="project-container" data-scrollmagic>
-                    <h1>Projects</h1>
+                    <h1 class="projects-heading">Projects</h1>
+                    <div class="project-closeup">
+                        <div class="left-content">
+                            <img src="/dist/assets/project-image.png" alt="Project-Image">
+                        </div>
+                        <div class="right-content">
+                            <h2 class="project-name">
+                                Mobile
+                            </h2>
+                            <p class="project-information">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="github-indication">
+                        <a href="https://github.com/lassi94">See more on Github</a>
+                    </div>
                 </div>
             </section>
 
             <section class="contact" id="contact">
-                <div class="contact-container" data-scrollmagic>
+                <div class="contact-container">
                     <h1 class="contact-heading">Contact</h1>
                     <p class="more-information">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
                     <div class="contact-information">
@@ -179,6 +195,24 @@
     $scroll = $('#scrolling-indicator'),
     $buttons = $('.buttons'),
     $content = $('.content');
+
+   /* $('[data-scrollmagic]').each(function(index, el){
+        var magicCtrl = new ScrollMagic();
+
+        var titles = $(el).find('h1'),
+            text = $(el).find('');
+
+        var timeline = new TimelineMax({pause:true});
+        timeline.add("start")
+        .fromTo(titles, 0.4, {y: '40px', opacity: 0}, {y:0, opacity:1, ease: Power2.EaseinOut}, "start");
+    })
+
+    var scene = new ScrollScene({
+        triggerElement: el,
+        offset: 0
+    })
+    .setTween(timeline)
+    .addTo(magicCtrl);*/
 
     var ctrl = new ScrollMagic.Controller({
         globalSceneOptions:{

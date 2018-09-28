@@ -20,9 +20,7 @@ body {
     overflow-y: scroll;
     scroll-snap-points-y: repeat(100%);
     scroll-snap-type: mandatory;
-    scroll-padding-top: 100px;
     scroll-snap-destination: 100% 0;
-    transition: 4s linear;
 
 }
 
@@ -708,6 +706,7 @@ nav{
 
 footer{
     width: 100%;
+    //height: 20vh;
     padding: 0;
     margin: 0;
     border: 2px solid $primary-color;

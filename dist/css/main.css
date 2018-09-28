@@ -1,3 +1,58 @@
+.project-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+  .project-container .projects-heading {
+    font-family: Raleway;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    top: 0%;
+    left: 75%;
+    transform: translate(-50%, -50%); }
+  .project-container .project-closeup {
+    display: flex;
+    padding: 40px; }
+    .project-container .project-closeup .left-content {
+      float: left; }
+      .project-container .project-closeup .left-content img {
+        width: 95%;
+        height: 95%; }
+    .project-container .project-closeup .right-content {
+      width: 40%;
+      height: 60%;
+      float: right; }
+      .project-container .project-closeup .right-content .project-name {
+        font-family: Raleway;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 25px;
+        position: absolute;
+        top: 30%;
+        transform: rotate(270deg);
+        float: top;
+        margin-left: -89px;
+        padding: 0; }
+      .project-container .project-closeup .right-content .project-information {
+        font-family: Raleway;
+        font-size: 16px;
+        line-height: 35px;
+        font-weight: 400; }
+  .project-container .github-indication {
+    float: right; }
+    .project-container .github-indication a {
+      outline: none;
+      font-family: Raleway;
+      font-size: 20px;
+      border: none;
+      cursor: crosshair;
+      color: #000000;
+      text-decoration: none;
+      font-weight: 700; }
+
 .about {
   height: 100vh;
   width: 100%; }
@@ -138,9 +193,7 @@ body {
   overflow-y: scroll;
   scroll-snap-points-y: repeat(100%);
   scroll-snap-type: mandatory;
-  scroll-padding-top: 100px;
-  scroll-snap-destination: 100% 0;
-  transition: 4s linear; }
+  scroll-snap-destination: 100% 0; }
 
 .container {
   overflow: hidden;
