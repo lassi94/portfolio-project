@@ -17,6 +17,13 @@ body {
     cursor: crosshair;
     font-family: Raleway;
     overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-points-y: repeat(100%);
+    scroll-snap-type: mandatory;
+    scroll-padding-top: 100px;
+    scroll-snap-destination: 100% 0;
+    transition: 4s linear;
+
 }
 
 .container{
@@ -33,6 +40,10 @@ body {
     height: 80px;
     //transition: height 900ms linear;
 }
+
+/*section{
+    scroll-snap-align: start;
+}*/
 
 nav{
     display: flex;
@@ -73,7 +84,7 @@ nav{
             width: 100%;
             outline: 0;
             &:hover{
-                border-bottom: 1px solid $primary-color;
+                border-bottom: 2px solid $primary-color;
                 cursor: crosshair;
             }
         }

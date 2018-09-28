@@ -134,7 +134,13 @@ html, body {
 body {
   cursor: crosshair;
   font-family: Raleway;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-type: mandatory;
+  scroll-padding-top: 100px;
+  scroll-snap-destination: 100% 0;
+  transition: 4s linear; }
 
 .container {
   overflow: hidden;
@@ -147,6 +153,9 @@ body {
   box-shadow: 2px 2px 2px #000000;
   height: 80px; }
 
+/*section{
+    scroll-snap-align: start;
+}*/
 nav {
   display: flex;
   position: fixed;
@@ -179,7 +188,7 @@ nav {
     width: 100%;
     outline: 0; }
     nav .desktop-nav a:hover {
-      border-bottom: 1px solid #FFE77C;
+      border-bottom: 2px solid #FFE77C;
       cursor: crosshair; }
   nav .mobile-nav {
     display: none; }
