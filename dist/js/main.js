@@ -13,6 +13,14 @@ $(function (){
     });
 });
 
+$(function(){
+    $(document).scroll(function(){
+        var $current = $(".current");
+        var $section = $("#home")
+        $current.toggleClass('bg-change', $(this).scrollTop() > $section.height() - 200);
+    })
+})
+
 function fade(){
 
     //window.location.replace('/dist/main.html');

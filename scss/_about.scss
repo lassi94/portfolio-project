@@ -8,12 +8,20 @@ $shadow: (0px 6px 22px 0px rgba(0,0,0,0.08));
 
     .flex-two{
         .flex-left{
-            display: block;
-            width: 300px;
+            display: grid;
+            position: absolute;
+            top: -5%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            grid-template-columns: 100%;
+            grid-row: auto;
+            width: 800px;
             height: 40px;
-            #html{
-                width: 250px;
-                height: 250px;
+            float:left;
+            justify-content: center;
+            .slider{
+                margin: auto auto -400px auto;
+                padding: 0;
             }
         }
     }
@@ -22,7 +30,7 @@ $shadow: (0px 6px 22px 0px rgba(0,0,0,0.08));
         width: 40%;
         height: 100%;
         float: right;
-        margin: 30px;
+        margin: 60px;
         padding: 0;
 
         .about-heading{
