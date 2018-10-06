@@ -16,8 +16,20 @@ $(function (){
 $(function(){
     $(document).scroll(function(){
         var $current = $(".current");
-        var $section = $("#home")
+        var $section = $("#home");
         $current.toggleClass('bg-change', $(this).scrollTop() > $section.height() - 200);
+    })
+})
+
+$(function(){
+    $(document).scroll(function(){
+        var $page = $(".current-page");
+        var $page1 = $(".page-count");
+        var $divider = $('.divider');
+        var $section = $("#home");
+        $page.toggleClass('bg-change', $(this).scrollTop() > $section.height() - 200);
+        $page1.toggleClass('bg-change', $(this).scrollTop() > $section.height() - 200);
+        $divider.toggleClass('bg-change-divider', $(this).scrollTop() > $section.height() - 200);
     })
 })
 

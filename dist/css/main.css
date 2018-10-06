@@ -715,18 +715,36 @@ nav {
   transition: color 300ms linear; }
 
 .page-counter {
-  display: block;
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 20px;
   z-index: 1;
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 95%;
   transform: translate(-50%, -50%); }
   .page-counter p {
-    color: #000000;
-    font-family: Raleway;
-    font-size: 50px;
+    display: flex;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 30px;
     transition: 500ms ease-in;
-    font-weight: 500; }
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in; }
+  .page-counter .divider {
+    display: flex;
+    border: 1px solid #ffffff;
+    transform: rotate(90deg);
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in; }
+
+.bg-change-divider {
+  border: 1px solid #000000 !important; }
 
 .current {
   display: block;
@@ -741,7 +759,7 @@ nav {
   transition: 1s ease-in; }
 
 .bg-change {
-  color: #000000; }
+  color: #000000 !important; }
 
 footer {
   width: 100%;
