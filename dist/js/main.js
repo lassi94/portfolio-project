@@ -33,6 +33,35 @@ $(function(){
     })
 })
 
+$(document).on('ready', function(){
+    $(".projects-slider").slick({
+        dots: false,
+        infinite: false,
+        centerMOde: true,
+        slidestoShow: 2,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidestoShow: 2,
+                infinite: true
+            }
+        },{
+
+            breakpoint: 600,
+            settings: {
+                slidestoShow: 1,
+                dots: true
+            }
+        },{
+
+            breakpoint: 300,
+            settings: "unslick"
+        }]
+    });
+});
+
 function fade(){
 
     //window.location.replace('/dist/main.html');
